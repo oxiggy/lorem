@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lorem</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <style>
+      body {
+          padding: 2rem 1rem;
+          margin: 0;
+      }
+      p {
+          font-family: 'Roboto', sans-serif;
+          line-height: 1.3;
+          text-wrap: pretty;
+      }
+      body p::selection {
+          background-color: lightgrey;
+      }
+      body._copied p::selection {
+          background-color: grey;
+      }
+  </style>
+  <script>
+    document.addEventListener("mousedown", () => {
+      document.body.classList.remove('_copied');
+    });
+    document.addEventListener("mouseup", () => {
+      const selection = window.getSelection();
+      if (selection) {
+        navigator.clipboard.writeText(selection.toString());
+        document.body.classList.add('_copied');
+        setTimeout(() => {
+          document.body.classList.remove('_copied');
+        }, 150)
+      }
+    });
+  </script>
+</head>
+<body>
+<div style="width: min(100%, 40rem); margin: 0 auto;">
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse a aliquam justo, quis lacinia neque. Quisque vitae ornare felis, vel dignissim massa. Donec id vulputate nisl. Phasellus a ante eu nulla aliquet blandit. Quisque sit amet felis id libero cursus aliquam vel id eros. Sed tortor est, elementum nec semper et, placerat sodales risus. Donec fringilla porttitor maximus. Duis ornare enim justo, nec pretium nisl eleifend ac. Nam sit amet velit et tellus viverra rhoncus nec in massa.
+  </p>
+  <p>Morbi dolor massa, ullamcorper a tortor sed, ultricies posuere nibh. Duis sed sapien mattis, feugiat nulla quis, tempor nulla. Ut sapien orci, sagittis sodales suscipit eu, consequat ut risus. Etiam malesuada, erat a vestibulum aliquam, metus magna luctus justo, eu maximus lorem augue ac sapien. Praesent in condimentum eros. Mauris vel nulla porta, imperdiet quam in, dignissim arcu. Cras fermentum ullamcorper nisi sed vestibulum. Duis at sagittis tortor, eu facilisis nisl. Quisque consectetur vitae enim vulputate vehicula. Pellentesque eget venenatis sem. Sed accumsan porta mi, eu interdum ligula tempor ut. Pellentesque quis lorem erat. Curabitur vitae commodo odio. Morbi nec nisl id orci mattis placerat eu sit amet mauris. Aliquam ac leo nec orci convallis ultrices.
+  </p>
+  <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent a diam lorem. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Pellentesque commodo massa quis libero porta placerat. Sed auctor leo ut pellentesque viverra. Sed condimentum fermentum sem vitae volutpat. Pellentesque sagittis sit amet lorem non ultricies. Morbi non lacus ac diam tristique gravida vitae malesuada purus. Morbi elementum eros at vulputate finibus. Suspendisse auctor sem a mattis placerat. Nulla facilisi. Phasellus id quam imperdiet, sagittis sapien sit amet, commodo dui.
+  </p>
+  <p>Phasellus magna ex, ullamcorper eget fringilla id, dapibus vel tortor. Donec blandit tristique dolor, quis tempus massa laoreet auctor. Nam blandit porttitor eros, quis aliquam neque venenatis et. Vestibulum ut orci est. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Quisque et tempor diam. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aliquam erat volutpat.
+  </p>
+  <p>Vestibulum pellentesque placerat odio in efficitur. Nullam nisl sapien, pharetra quis ipsum sed, interdum rhoncus diam. Nunc metus enim, ultricies ullamcorper interdum sed, gravida quis ipsum. Proin feugiat tempus purus, in scelerisque tellus dictum eu. Cras eleifend purus et dui pulvinar, vel mollis elit iaculis. Pellentesque nec odio vitae ligula feugiat consequat vel ac nisl. Etiam efficitur, diam ut accumsan ultrices, mi lorem ultricies nisl, id vestibulum felis eros et quam. Donec placerat odio sit amet facilisis mollis. Integer eget convallis enim. Maecenas semper porta felis non malesuada. Fusce ut nulla sem. Nam blandit turpis est. Pellentesque ornare in lorem mattis eleifend.
+  </p>
+</div>
+</body>
+</html>
